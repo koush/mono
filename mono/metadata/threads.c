@@ -2731,6 +2731,12 @@ mono_threads_install_cleanup (MonoThreadCleanupFunc func)
 	mono_thread_cleanup_fn = func;
 }
 
+MonoThreadCleanupFunc
+mono_threads_get_cleanup()
+{
+    return mono_thread_cleanup_fn;
+}
+
 void
 mono_thread_set_manage_callback (MonoThread *thread, MonoThreadManageCallback func)
 {
